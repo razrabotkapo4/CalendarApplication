@@ -16,7 +16,7 @@ class AuthorizationController {
 
             res.status(200).send(JSON.stringify({ success: true, sessionKey, notes: {} }));
         } catch (err) {
-            res.status(401).send(JSON.stringify({ success: false, description: "Non-unique username..." }));
+            res.status(200).send(JSON.stringify({ success: false, description: "Non-unique username..." }));
         } finally {
             await mongoose.disconnect();
         }
